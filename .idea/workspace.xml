@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="" />
+    <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Tracking_Apps.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/app_module.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/bloc/login/login_event.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/bloc/login/login_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/login_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/data_source/repository/login_repository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/main_dev.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/models/login.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/resources/app_config.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/router.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/toba_apps.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/utils/global_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/view/dashboard.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/view/home.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Tracking Apps.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/test/widget_test.dart" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2HiWO7CA3zS1upQfeDfbMivRlp8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -19,9 +67,35 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\assets\images" />
+      <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\lib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flutter.main_dev.dart">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/track_apps/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_dev.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="additionalArgs" value="--no-sound-null-safety" />
+      <option name="filePath" value="$PROJECT_DIR$/track_apps/lib/main_dev.dart" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Flutter.main_dev.dart" />
+      <item itemvalue="Flutter.main.dart" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="" />
@@ -31,5 +105,17 @@
       <updated>1668768355554</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
