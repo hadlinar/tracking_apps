@@ -14,6 +14,6 @@ void main() async {
   final rootApp = appModule.configureBloc(TrackingApp());
 
   final app =
-  AppConfig(urlEndpoint: url, buildFlavor: "production", child: rootApp);
+  AppConfig(urlEndpoint: url, buildFlavor: "development", child: rootApp);
   runApp(app);
 }
