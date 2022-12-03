@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Tracking_Apps.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/app_module.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/bloc/login/login_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/bloc/login/login_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/login_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/data_source/repository/login_repository.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/main_dev.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/models/login.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/resources/app_config.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/router.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/toba_apps.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/utils/global_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/view/dashboard.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/view/home.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Tracking Apps.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/track_apps/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/test/widget_test.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +28,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="2HiWO7CA3zS1upQfeDfbMivRlp8" />
   <component name="ProjectLevelVcsManager">
