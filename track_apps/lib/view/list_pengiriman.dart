@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import '../utils/global.dart';
 import '../utils/global_state.dart';
+import 'list_pengiriman/daftar_faktur.dart';
 import 'login.dart';
 
 class ListPengiriman extends StatefulWidget{
@@ -39,7 +40,17 @@ class _ListPengiriman extends State<ListPengiriman> {
             child: Column(
               children: [
                 Container(
-                  child: Global.getCardPengiriman("TRK-2022-KP-0001", 0xff6FA9F7, "Barang belum dikirim", "16 Nov 2022, 13:57", "3"),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ListFaktur(),
+                        ),
+                      );
+                    },
+                    child: Global.getCardPengiriman("TRK-2022-KP-0001", 0xff6FA9F7, "Barang belum dikirim", "16 Nov 2022, 13:57", "3"),
+                  )
                 )
               ],
             )
