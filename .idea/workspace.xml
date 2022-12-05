@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/utils/global.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/utils/global.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman/list_faktur.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman/daftar_faktur.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/track_apps/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
