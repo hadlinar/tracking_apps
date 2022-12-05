@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:track_apps/view/list_pengiriman/detail_pengiriman.dart';
 import '../../utils/global.dart';
 import '../../utils/global_state.dart';
 
@@ -36,7 +37,7 @@ class _ListFaktur extends State<ListFaktur> {
                 )
             ),
             title: Text(
-                "Daftar Faktur",
+                "Daftar Pengiriman",
                 style: Global.getCustomFont(Global.TOSCA, 18, 'bold')
             ),
           ),
@@ -47,7 +48,17 @@ class _ListFaktur extends State<ListFaktur> {
                 children: [
                   //TODO
                   Container(
-                    child: Global.getCardFaktur("FKT/BDG/2022/00000130", "30055011", "MUSTAJAB 2, TO", "JL.T.HASAN DEK,GP.LAMSEUPENG"),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailFaktur(),
+                            ),
+                          );
+                        },
+                        child: Global.getCardFaktur("FKT/BDG/2022/00000130", "30055011", "MUSTAJAB 2, TO", "JL.T.HASAN DEK,GP.LAMSEUPENG"),
+                      )
                   ),
                   Container(
                     padding: const EdgeInsets.only(top: 15),

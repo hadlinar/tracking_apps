@@ -13,6 +13,7 @@ class Global {
   static int YELLOW = 0xffFCD713;
   static int GREY = 0xff656565;
   static int LIGHT_GREY = 0xff878787;
+  static int DARK_GREY = 0xff727272;
   static int RED = 0xffFF0000;
   static int BLACK = 0xff000000;
   static int WHITE = 0xffFFFFFF;
