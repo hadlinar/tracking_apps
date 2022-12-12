@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Global {
-  static const String baseURL = "http://localhost:5000";
+  static const String baseURL = "http://10.0.2.2:5000";
 
   static int TOSCA = 0xff1BA3AC;
   static int LIGHT_TOSCA = 0xff1CBAC5;

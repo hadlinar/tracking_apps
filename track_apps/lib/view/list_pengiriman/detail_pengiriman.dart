@@ -16,8 +16,30 @@ class DetailFaktur extends StatefulWidget{
 final GlobalState store = GlobalState.instance;
 
 class _DetailFaktur extends State<DetailFaktur> {
-  List<CustomerCategory> custCat = [
+  String? valPengiriman;
+  String? descPengiriman;
 
+  List<Map<String, String>> statusPengiriman = [
+    {
+      "val": "2",
+      "desc": "Barang diterima"
+    },
+    {
+      "val": "3",
+      "desc": "Barang diterima sebagian"
+    },
+    {
+      "val": "4",
+      "desc": "Pengiriman parsial"
+    },
+    {
+      "val": "5",
+      "desc": "Toko tutup"
+    },
+    {
+      "val": "6",
+      "desc": "Barang tidak sesuai"
+    }
   ];
 
   @override
@@ -219,131 +241,105 @@ class _DetailFaktur extends State<DetailFaktur> {
                     ),
                     color: Color(Global.TOSCA),
                     onPressed: () {
-                      AlertDialog(
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(10)
-                            )
-                        ),
-                        content: SizedBox(
-                          width: 322,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              Container(
-                                  padding: const EdgeInsets.only(bottom: 21),
-                                  child: DropdownButtonFormField<String>(
-                                    isExpanded: true,
-                                    hint: const Text("Status pengiriman"),
-                                    dropdownColor: Colors.white,
-                                    style: Global.getCustomFont(Global.BLACK, 15, 'medium'),
-                                    value: cusCat,
-                                    items: custCat.map((e) {
-                                      return DropdownMenuItem<String>(
-                                        value: e.category_id,
-                                        child: Text(e.category_name),
-                                      );
-                                    }).toList(),
-                                    onChanged: (String? value) {
-                                      setState(() {
-                                        cusCat = value;
-                                      });
-                                    },
-                                    decoration: InputDecoration(
-                                      contentPadding: const EdgeInsets.only(top: 10, bottom: 10, left: 12, right: 12),
-                                      labelText: "Category",
-                                      labelStyle: const TextStyle(
-                                          color: Color(0xff757575),
-                                          fontSize: 15,
-                                          fontFamily: 'medium'),
-                                      border: OutlineInputBorder(
-                                          borderRadius:
-                                          BorderRadius.circular(10),
-                                          borderSide: const BorderSide()
-                                      ),
-                                    ),
-                                  )
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      showDialog(
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(10)
+                                )
+                            ),
+                            content: SizedBox(
+                              width: 322,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
-                                  Expanded(
-                                      flex: 1,
-                                      child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(10),
-                                              side: BorderSide(
-                                                  color: Theme
-                                                      .of(context)
-                                                      .accentColor,
-                                                  width: 3
-                                              )
-                                          ),
-                                          color: Colors.white,
-                                          onPressed: () {
-                                            newCustomerController.text = "";
-                                            cusCat = null;
-                                            Navigator.of(context).pop();
-                                          },
-                                          child: Text(
-                                            "Cancel",
-                                            style: TextStyle(
-                                                color: Color(Global.BLUE),
-                                                fontFamily: 'bold',
-                                                fontSize: 15
-                                            ),
-                                          )
-                                      )
-                                  ),
                                   Container(
-                                    width: 25,
-                                  ),
-                                  Expanded(
-                                      flex: 1,
-                                      child: RaisedButton(
-                                          shape: RoundedRectangleBorder(
-                                              side:
-                                              BorderSide(color: Color(Global.BLUE)),
-                                              borderRadius: BorderRadius.circular(10)),
-                                          color: Color(Global.BLUE),
-                                          onPressed: () {
-                                            setState(() {
-                                              savedCust = true;
-                                            });
-                                            if(newCustomerController.text == "") {
-                                              showDialog(
-                                                  context: context,
-                                                  builder: (BuildContext context) {
-                                                    return Global.defaultModal(() {
-                                                      Navigator.pop(context);
-                                                    }, context, Global.WARNING_ICON, "Please add new customer's name", "Ok", false);
-                                                  }
-                                              );
-                                            }
-                                            else if (cusCat == null) {
-                                              showDialog(
-                                                  context: context,
-                                                  builder: (BuildContext context) {
-                                                    return Global.defaultModal(() {
-                                                      Navigator.pop(context);
-                                                    }, context, Global.WARNING_ICON, "Please add new customer's category", "Ok", false);
-                                                  }
-                                              );
-                                            } else {
-                                              store.set("cust_id", "null");
-                                              store.set("cust_name", newCustomerController.text );
-                                              store.set("cat_id", cusCat);
-                                              Navigator.pop(context);
-                                            }
-                                          },
-                                          child: Text("Add", style: Global.getCustomFont(Global.WHITE, 14, 'bold'))
+                                      padding: const EdgeInsets.only(bottom: 21),
+                                      child: DropdownButtonFormField<String>(
+                                        isExpanded: true,
+                                        hint: const Text("Status pengiriman"),
+                                        dropdownColor: Colors.white,
+                                        style: Global.getCustomFont(Global.BLACK, 15, 'medium'),
+                                        value: valPengiriman,
+                                        items: statusPengiriman.map((e) {
+                                          return DropdownMenuItem<String>(
+                                            value: e['val']! + ', ' + e['desc']!,
+                                            child: Text(e['desc']!),
+                                          );
+                                        }).toList(),
+                                        onChanged: (String? value) {
+                                          setState(() {
+                                            valPengiriman = value;
+                                          });
+                                        },
+                                        decoration: InputDecoration(
+                                          contentPadding: const EdgeInsets.only(top: 10, bottom: 10, left: 12, right: 12),
+                                          labelText: "Status pengiriman",
+                                          labelStyle: const TextStyle(
+                                              color: Color(0xff757575),
+                                              fontSize: 15,
+                                              fontFamily: 'medium'),
+                                          border: OutlineInputBorder(
+                                              borderRadius:
+                                              BorderRadius.circular(10),
+                                              borderSide: const BorderSide()
+                                          ),
+                                        ),
                                       )
                                   ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Expanded(
+                                          flex: 1,
+                                          child: RaisedButton(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius: BorderRadius.circular(10),
+                                                  side: BorderSide(
+                                                      color: Color(Global.RED),
+                                                      width: 3)),
+                                              color: Colors.white,
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text(
+                                                "Batal",
+                                                style: TextStyle(
+                                                    color: Color(Global.RED),
+                                                    fontFamily: 'bold',
+                                                    fontSize: 14
+                                                ),
+                                              )
+                                          )
+                                      ),
+                                      Container(
+                                        width: 20
+                                      ),
+                                      Expanded(
+                                          flex: 1,
+                                          child: RaisedButton(
+                                              shape: RoundedRectangleBorder(
+                                                side: BorderSide(color: Color(Global.TOSCA)),
+                                                borderRadius: BorderRadius.circular(10)
+                                              ),
+                                              color: Color(Global.TOSCA),
+                                              onPressed: () {
+                                                print(valPengiriman);
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text(
+                                                "Simpan",
+                                                style: Global.getCustomFont(Global.WHITE, 14, 'bold'),
+                                              ))),
+                                    ],
+                                  )
                                 ],
-                              )
-                            ],
-                          ),
-                        ),
-                      );
+                              ),
+                            ),
+                          );
+                        },
+                        context: context
+                      );                      
                     },
                     child: const Text(
                       "Selesai pengiriman ke outlet",

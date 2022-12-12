@@ -39,6 +39,7 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
       if(response.message == "ok") {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString("access_token", response.token);
+        print(response.token);
         yield SuccessLoginState();
       }
     } on DioError catch (e) {

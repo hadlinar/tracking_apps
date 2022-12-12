@@ -43,7 +43,7 @@ class TrackingApp extends StatelessWidget {
           )
       ),
       onGenerateRoute: r.Router.generateRouter,
-      initialRoute: r.Router.home,
+      initialRoute: r.Router.launcher,
     );
   }
 }
