@@ -30,12 +30,11 @@ class TrackingLoperBloc extends Bloc<TrackingLoperEvent, TrackingLoperBlocState>
   }
 
   Stream<TrackingLoperBlocState> _mapToGetTrackingLoperEvent(GetTrackingLoperEvent e) async* {
-    yield LoadingTrackingLoperState();
     final token = _sharedPreferences.getString("access_token");
     try{
       final response = await _trackingLoperRepository.getTrackingLoper("Bearer $token", e.id);
       if (response.message == "ok") {
-        yield getTrackingLoperState(response.result);
+        yield GetTrackingLoperState(response.result);
       }
     } on DioError catch(e) {
       if(e.response?.statusCode == 500) {

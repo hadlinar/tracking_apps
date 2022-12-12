@@ -12,15 +12,21 @@ import 'package:track_apps/bloc/user/user_bloc.dart';
 import 'package:track_apps/data_source/network/pengiriman_faktur_service.dart';
 import 'package:track_apps/data_source/network/tracking_loper_service.dart';
 import 'package:track_apps/data_source/network/user_service.dart';
+import 'package:track_apps/data_source/repository/logout_repository.dart';
 import 'package:track_apps/data_source/repository/pengiriman_faktur_repository.dart';
 import 'package:track_apps/data_source/repository/tracking_loper_repository.dart';
 import 'package:track_apps/data_source/repository/user_repository.dart';
 
+import 'bloc/logout/logout_bloc.dart';
+import 'bloc/loper/loper_bloc.dart';
 import 'data_source/network/branch_service.dart';
 import 'data_source/network/login_service.dart';
 
+import 'data_source/network/logout_service.dart';
+import 'data_source/network/loper_service.dart';
 import 'data_source/repository/branch_repository.dart';
 import 'data_source/repository/login_repository.dart';
+import 'data_source/repository/loper_repository.dart';
 
 class AppModule {
 
@@ -52,6 +58,12 @@ class AppModule {
     injector.registerSingleton<UserService>(
         UserService.create(injector.get())
     );
+    injector.registerSingleton<LoperService>(
+        LoperService.create(injector.get())
+    );
+    injector.registerSingleton<LogoutService>(
+        LogoutService.create(injector.get())
+    );
   }
 
   void configureRepository() {
@@ -60,6 +72,8 @@ class AppModule {
     injector.registerSingleton(PengirimanFakturRepository(injector.get()));
     injector.registerSingleton(TrackingLoperRepository(injector.get()));
     injector.registerSingleton(UserRepository(injector.get()));
+    injector.registerSingleton(LoperRepository(injector.get()));
+    injector.registerSingleton(LogoutRepository(injector.get()));
   }
 
   Widget configureBloc(Widget app) {
@@ -81,6 +95,12 @@ class AppModule {
       ),
       BlocProvider<LauncherBloc>(
         create: (_) => LauncherBloc.create(injector.get()),
+      ),
+      BlocProvider<LoperBloc>(
+        create: (_) => LoperBloc.create(injector.get(), injector.get(), injector.get()),
+      ),
+      BlocProvider<LogoutBloc>(
+        create: (_) => LogoutBloc.create(injector.get(), injector.get()),
       ),
     ], child: app);
   }

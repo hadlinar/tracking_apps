@@ -44,17 +44,8 @@ class _Dashboard extends State<Dashboard> {
       ),
       body: BlocBuilder<UserBloc, UserBlocState>(
         builder: (context, state) {
-          if(state is LoadingUserState || state is InitialUserBlocState){
-            return Container(
-                color: Colors.white,
-                child: const CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF1BA3AC)),
-                )
-            );
-          }
           if(state is GetUserState) {
-            store.set("nama", state.getUser.nama);
-            store.set("cabang", state.getUser.branch);
+            store.set("id", state.getUser.id.toString());
             return SingleChildScrollView(
               child: Column(
                   children: <Widget> [
@@ -71,7 +62,6 @@ class _Dashboard extends State<Dashboard> {
                         ),
                         Column(
                           children: [
-                            //TODO
                             Container(
                                 padding: const EdgeInsets.only(left: 49, top: 95),
                                 child: Align(
@@ -93,7 +83,6 @@ class _Dashboard extends State<Dashboard> {
                                   Stack(
                                     children: <Widget>[
                                       Global.getMenuCard("pelanggan.png", 0xffFFFFFF),
-                                      //TODO
                                       Container(
                                           padding: const EdgeInsets.only(left: 22, top: 89),
                                           child: Text('3', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
@@ -110,7 +99,6 @@ class _Dashboard extends State<Dashboard> {
                                   Stack(
                                     children: <Widget>[
                                       Global.getMenuCard("pengiriman.png", 0xffFFFFFF),
-                                      //TODO
                                       Container(
                                           padding: const EdgeInsets.only(left: 22, top: 89),
                                           child: Text('2', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
@@ -131,7 +119,6 @@ class _Dashboard extends State<Dashboard> {
                                   Stack(
                                     children: <Widget>[
                                       Global.getMenuCard("jam.png", 0xffFFFFFF),
-                                      //TODO
                                       Container(
                                           padding: const EdgeInsets.only(left: 22, top: 89),
                                           child: Text('5', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
@@ -148,7 +135,6 @@ class _Dashboard extends State<Dashboard> {
                                   Stack(
                                     children: <Widget>[
                                       Global.getMenuCard("faktur.png", 0xffFFFFFF),
-                                      //TODO
                                       Container(
                                           padding: const EdgeInsets.only(left: 22, top: 89),
                                           child: Text('3', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
@@ -162,7 +148,6 @@ class _Dashboard extends State<Dashboard> {
                                 ],
                               )
                             ),
-                            //TODO
                             Align(
                               alignment: Alignment.bottomLeft,
                               child: Container(
@@ -220,6 +205,9 @@ class _Dashboard extends State<Dashboard> {
                   ],
                 ),
             );
+          }
+          if(state is FailedUserState || state is NotLoggedInState) {
+            return Login();
           } else {
             return Container();
           }

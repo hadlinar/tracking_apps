@@ -5,30 +5,27 @@ part 'loper.g.dart';
 
 // {
 // "message": "ok",
-// "result": [
-// {
-// "nik": "2009451002",
-// "branch_id": "51",
-// "nama_loper": "DIDIK RIYANTO",
+// "result": {
+// "id": 3,
+// "nik": "2016458002",
+// "branch": "AMBON",
+// "nama_loper": "SUPARDI ARSAD",
 // "status_kerja": 0
-// },
-// {
-// "nik": "2021409006",
-// "branch_id": "13",
-// "nama_loper": "AUFAR RAFDI",
-// "status_kerja": 0
-// },
+// }
+// }
 
 @JsonSerializable()
 class Loper{
+  int id;
   String nik;
-  String branch_id;
+  String branch;
   String nama_loper;
-  String status_kerja;
+  int status_kerja;
 
   Loper({
+    required this.id,
     required this.nik,
-    required this.branch_id,
+    required this.branch,
     required this.nama_loper,
     required this.status_kerja
   });
@@ -39,7 +36,7 @@ class Loper{
 @JsonSerializable()
 class LoperResponse{
   String message;
-  List<Loper> result;
+  Loper result;
 
   LoperResponse(this.message, this.result);
 

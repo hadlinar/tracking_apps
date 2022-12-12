@@ -15,8 +15,8 @@ class FailedTrackingLoperState extends TrackingLoperBlocState{}
 
 class NotLoggedInState extends TrackingLoperBlocState{}
 
-class getTrackingLoperState extends TrackingLoperBlocState{
+class GetTrackingLoperState extends TrackingLoperBlocState{
   List<TrackingLoper> getTrackingLoper;
 
-  getTrackingLoperState(this.getTrackingLoper);
+  GetTrackingLoperState(this.getTrackingLoper);
 }

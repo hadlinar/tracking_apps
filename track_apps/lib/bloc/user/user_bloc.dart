@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
 
+import '../../data_source/repository/logout_repository.dart';
 import '../../data_source/repository/user_repository.dart';
 import 'user_state.dart';
 import 'user_event.dart';
@@ -30,7 +31,7 @@ class UserBloc extends Bloc<UserEvent, UserBlocState> {
   }
 
   Stream<UserBlocState> _mapToGetUserEvent(GetUserEvent e) async* {
-    yield LoadingUserState();
+    // yield LoadingUserState();
     final token = _sharedPreferences.getString("access_token");
     try{
       final response = await _userRepository.getUser("Bearer $token");

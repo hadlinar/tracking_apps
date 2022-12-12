@@ -69,7 +69,7 @@ class Global {
     );
   }
 
-  static Card getCardPengiriman(String noPengiriman, int color, String status, String date, String jmlhFaktur) {
+  static Card getCardPengiriman(String noPengiriman, int color, String status, String date) {
     return Card(
         elevation: 5,
         shadowColor: const Color(0xffBCBCBC),
@@ -79,7 +79,7 @@ class Global {
         ),
         child: SizedBox(
             width: 370,
-            height: 130,
+            height: 100,
             child: Container(
               padding: const EdgeInsets.only(left: 12, top: 14),
               child: Column(
@@ -123,13 +123,13 @@ class Global {
                       child: Text(date, style: Global.getCustomFont(Global.BLACK, 14, 'medium')),
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(jmlhFaktur + " faktur", style: Global.getCustomFont(Global.BLACK, 14, 'medium')),
-                    ),
-                  )
+                  // Container(
+                  //   padding: const EdgeInsets.only(top: 10),
+                  //   child: Align(
+                  //     alignment: Alignment.topLeft,
+                  //     child: Text(jmlhFaktur + " faktur", style: Global.getCustomFont(Global.BLACK, 14, 'medium')),
+                  //   ),
+                  // )
                 ],
               )
             )

@@ -16,15 +16,15 @@ part 'trackingLoper.g.dart';
 // }
 // }
 
-@JsonSerializable()
+@JsonSerializable(nullable: true)
 class TrackingLoper{
-  String id;
+  int id;
   String id_pengiriman;
-  String id_loper;
+  int id_loper;
   String branch_id;
-  String start_loper;
-  String finish_loper;
-  String tanggal;
+  DateTime? start_loper;
+  DateTime? finish_loper;
+  DateTime? tanggal;
 
   TrackingLoper({
     required this.id,

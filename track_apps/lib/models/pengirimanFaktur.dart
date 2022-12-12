@@ -16,8 +16,8 @@ part 'pengirimanFaktur.g.dart';
 @JsonSerializable()
 class PengirimanFaktur{
   String no_faktur;
-  String start_faktur;
-  String finish_faktur;
+  DateTime start_faktur;
+  DateTime finish_faktur;
   String check_faktur;
   String deskripsi;
 
