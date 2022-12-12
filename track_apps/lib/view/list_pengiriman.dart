@@ -52,7 +52,7 @@ class _ListPengiriman extends State<ListPengiriman> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ListFaktur(),
+                                builder: (context) => ListFaktur(state.getTrackingLoper[0].id.toString()),
                               ),
                             );
                           },
@@ -70,7 +70,6 @@ class _ListPengiriman extends State<ListPengiriman> {
                                 );
                               }
                           )
-                          // Global.getCardPengiriman("TRK-2022-KP-0001", 0xff6FA9F7, "Barang belum dikirim", "16 Nov 2022, 13:57", "3"),
                         )
                       ],
                     )

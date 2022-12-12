@@ -147,9 +147,9 @@ class Global {
         ),
         child: SizedBox(
             width: 370,
-            height: 160,
+            // height: 160,
             child: Container(
-                padding: const EdgeInsets.only(left: 12, top: 14),
+                padding: const EdgeInsets.only(left: 12, top: 14, bottom: 14, right: 12),
                 child: Column(
                   children: [
                     Row(
