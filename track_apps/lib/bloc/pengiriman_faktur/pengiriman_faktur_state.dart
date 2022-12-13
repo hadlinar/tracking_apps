@@ -13,7 +13,7 @@ class SuccessPengirimanFakturState extends PengirimanFakturBlocState {}
 
 class FailedPengirimanFakturState extends PengirimanFakturBlocState{}
 
-class NotLoggedInState extends PengirimanFakturBlocState{}
+// class NotLoggedInState extends PengirimanFakturBlocState{}
 
 class getPengirimanFakturState extends PengirimanFakturBlocState{
   List<PengirimanFaktur> getPengirimanFaktur;
@@ -28,3 +28,9 @@ class GetDetailFakturState extends PengirimanFakturBlocState{
 }
 
 class SuccessUpdateFinishTimeState extends PengirimanFakturBlocState{}
+
+class GetRekapState extends PengirimanFakturBlocState{
+  Rekap getRekap;
+
+  GetRekapState(this.getRekap);
+}

@@ -30,4 +30,11 @@ abstract class PengirimanFakturService{
       @Query('noFaktur') String noFaktur,
       @Body() Map<String,dynamic> body
     );
+
+  @GET('/pengiriman-faktur/rekap/{idLoper}/{filter}')
+  Future<RekapResponse> getRekap(
+    @Header("Authorization") String authorization,
+    @Path('idLoper') String idLoper,
+    @Path('filter') String filter,
+  );
 }

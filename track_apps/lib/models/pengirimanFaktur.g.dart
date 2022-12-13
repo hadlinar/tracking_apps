@@ -120,3 +120,25 @@ Map<String, dynamic> _$UpdateFinishTimeResponseToJson(
     <String, dynamic>{
       'message': instance.message,
     };
+
+Rekap _$RekapFromJson(Map<String, dynamic> json) => Rekap(
+      pengiriman: json['pengiriman'] as String,
+      faktur: json['faktur'] as String,
+    );
+
+Map<String, dynamic> _$RekapToJson(Rekap instance) => <String, dynamic>{
+      'pengiriman': instance.pengiriman,
+      'faktur': instance.faktur,
+    };
+
+RekapResponse _$RekapResponseFromJson(Map<String, dynamic> json) =>
+    RekapResponse(
+      json['message'] as String,
+      Rekap.fromJson(json['result'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$RekapResponseToJson(RekapResponse instance) =>
+    <String, dynamic>{
+      'message': instance.message,
+      'result': instance.result,
+    };

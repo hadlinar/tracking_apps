@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:track_apps/bloc/pengiriman_faktur/pengiriman_faktur_bloc.dart';
 import 'package:track_apps/bloc/user/user_bloc.dart';
 import 'package:track_apps/view/list_pengiriman.dart';
 import 'package:track_apps/view/profile.dart';
@@ -21,6 +22,7 @@ final GlobalState store = GlobalState.instance;
 
 class _Dashboard extends State<Dashboard> {
   String? defaultValue;
+  String idLoper = store.get("id");
   List<String> filterStat = [
     'Harian',
     'Bulanan'
@@ -46,6 +48,11 @@ class _Dashboard extends State<Dashboard> {
         builder: (context, state) {
           if(state is GetUserState) {
             store.set("id", state.getUser.id.toString());
+            if(defaultValue == 'Harian' || defaultValue == null) {
+              BlocProvider.of<PengirimanFakturBloc>(context).add(GetRekapEvent(state.getUser.id.toString(), "Harian"));
+            } else {
+              BlocProvider.of<PengirimanFakturBloc>(context).add(GetRekapEvent(state.getUser.id.toString(), defaultValue!));
+            }
             return SingleChildScrollView(
               child: Column(
                   children: <Widget> [
@@ -76,78 +83,97 @@ class _Dashboard extends State<Dashboard> {
                                   child: Text(state.getUser.branch, style: Global.getCustomFont(Global.WHITE, 19, 'medium')),
                                 )
                             ),
-                            Container(
-                              padding: const EdgeInsets.only(left: 31, top: 77, right: 31),
-                              child: Row(
-                                children: [
-                                  Stack(
-                                    children: <Widget>[
-                                      Global.getMenuCard("pelanggan.png", 0xffFFFFFF),
-                                      Container(
-                                          padding: const EdgeInsets.only(left: 22, top: 89),
-                                          child: Text('3', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
-                                      ),
-                                      Container(
-                                          padding: const EdgeInsets.only(left: 22, top: 120),
-                                          child: Global.getMenuText("pelanggan")
+                            BlocBuilder<PengirimanFakturBloc, PengirimanFakturBlocState>(
+                              builder: (context, state) {
+                                if(state is InitialPengirimanFakturBlocState || state is LoadingPengirimanFakturState) {
+                                  return Container(
+                                    child: const Center(
+                                        child: CircularProgressIndicator(
+                                          valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF1BA3AC)),
+                                        )
+                                    ),
+                                  );
+                                }
+                                if(state is GetRekapState) {
+                                  return Container(
+                                      padding: const EdgeInsets.only(left: 31, top: 77, right: 31),
+                                      child: Row(
+                                        children: [
+                                          Stack(
+                                            children: <Widget>[
+                                              Global.getMenuCard("faktur.png", 0xffFFFFFF),
+                                              Container(
+                                                  padding: const EdgeInsets.only(left: 22, top: 89),
+                                                  child: Text(state.getRekap.faktur, style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
+                                              ),
+                                              Container(
+                                                  padding: const EdgeInsets.only(left: 22, top: 120),
+                                                  child: Global.getMenuText("faktur")
+                                              )
+                                            ],
+                                          ),
+                                          Container(
+                                              width: 26
+                                          ),
+                                          Stack(
+                                            children: <Widget>[
+                                              Global.getMenuCard("pengiriman.png", 0xffFFFFFF),
+                                              Container(
+                                                  padding: const EdgeInsets.only(left: 22, top: 89),
+                                                  child: Text(state.getRekap.pengiriman, style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
+                                              ),
+                                              Container(
+                                                  padding: const EdgeInsets.only(left: 22, top: 120),
+                                                  child: Global.getMenuText("pengiriman")
+                                              )
+                                            ],
+                                          ),
+                                        ],
                                       )
-                                    ],
-                                  ),
-                                  Container(
-                                    width: 26
-                                  ),
-                                  Stack(
-                                    children: <Widget>[
-                                      Global.getMenuCard("pengiriman.png", 0xffFFFFFF),
-                                      Container(
-                                          padding: const EdgeInsets.only(left: 22, top: 89),
-                                          child: Text('2', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
-                                      ),
-                                      Container(
-                                          padding: const EdgeInsets.only(left: 22, top: 120),
-                                          child: Global.getMenuText("pengiriman")
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              )
+                                  );
+                                }
+                                else {
+                                  return Container();
+                                }
+                              }
                             ),
-                            Container(
-                              padding: const EdgeInsets.only(left: 31, top: 12, right: 31),
-                              child: Row(
-                                children: [
-                                  Stack(
-                                    children: <Widget>[
-                                      Global.getMenuCard("jam.png", 0xffFFFFFF),
-                                      Container(
-                                          padding: const EdgeInsets.only(left: 22, top: 89),
-                                          child: Text('5', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
-                                      ),
-                                      Container(
-                                          padding: const EdgeInsets.only(left: 22, top: 120),
-                                          child: Global.getMenuText("jam perjalanan")
-                                      )
-                                    ],
-                                  ),
-                                  Container(
-                                    width: 26
-                                  ),
-                                  Stack(
-                                    children: <Widget>[
-                                      Global.getMenuCard("faktur.png", 0xffFFFFFF),
-                                      Container(
-                                          padding: const EdgeInsets.only(left: 22, top: 89),
-                                          child: Text('3', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
-                                      ),
-                                      Container(
-                                          padding: const EdgeInsets.only(left: 22, top: 120),
-                                          child: Global.getMenuText("faktur")
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              )
-                            ),
+
+                            // Container(
+                            //   padding: const EdgeInsets.only(left: 31, top: 12, right: 31),
+                            //   child: Row(
+                            //     children: [
+                            //       Stack(
+                            //         children: <Widget>[
+                            //           Global.getMenuCard("jam.png", 0xffFFFFFF),
+                            //           Container(
+                            //               padding: const EdgeInsets.only(left: 22, top: 89),
+                            //               child: Text('5', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
+                            //           ),
+                            //           Container(
+                            //               padding: const EdgeInsets.only(left: 22, top: 120),
+                            //               child: Global.getMenuText("jam perjalanan")
+                            //           )
+                            //         ],
+                            //       ),
+                            //       Container(
+                            //         width: 26
+                            //       ),
+                            //       Stack(
+                            //         children: <Widget>[
+                            //           Global.getMenuCard("faktur.png", 0xffFFFFFF),
+                            //           Container(
+                            //               padding: const EdgeInsets.only(left: 22, top: 89),
+                            //               child: Text('3', style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
+                            //           ),
+                            //           Container(
+                            //               padding: const EdgeInsets.only(left: 22, top: 120),
+                            //               child: Global.getMenuText("faktur")
+                            //           )
+                            //         ],
+                            //       ),
+                            //     ],
+                            //   )
+                            // ),
                             Align(
                               alignment: Alignment.bottomLeft,
                               child: Container(
@@ -167,6 +193,7 @@ class _Dashboard extends State<Dashboard> {
                                     onChanged: (String? value) {
                                       setState(() {
                                         defaultValue = value;
+                                        BlocProvider.of<PengirimanFakturBloc>(context).add(GetRekapEvent(state.getUser.id.toString(), defaultValue!));
                                       });
                                     },
                                     decoration: InputDecoration(

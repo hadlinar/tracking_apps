@@ -33,6 +33,9 @@ class PengirimanFakturBloc extends Bloc<PengirimanFakturEvent, PengirimanFakturB
     if(event is UpdateFinishTimeEvent) {
       yield* _mapToUpdateFinishTime(event);
     }
+    if(event is GetRekapEvent) {
+      yield* _mapToGetRekapEvent(event);
+    }
   }
 
   Stream<PengirimanFakturBlocState> _mapToGetPengirimanFakturEvent(GetPengirimanFakturEvent e) async* {
@@ -44,12 +47,7 @@ class PengirimanFakturBloc extends Bloc<PengirimanFakturEvent, PengirimanFakturB
         yield getPengirimanFakturState(response.result);
       }
     } on DioError catch(e) {
-      if(e.response?.statusCode == 500) {
-        yield NotLoggedInState();
-      }
-      else {
-        yield FailedPengirimanFakturState();
-      }
+      yield FailedPengirimanFakturState();
     }
   }
 
@@ -62,12 +60,7 @@ class PengirimanFakturBloc extends Bloc<PengirimanFakturEvent, PengirimanFakturB
         yield GetDetailFakturState(response.result);
       }
     } on DioError catch(e) {
-      if(e.response?.statusCode == 500) {
-        yield NotLoggedInState();
-      }
-      else {
-        yield FailedPengirimanFakturState();
-      }
+      yield FailedPengirimanFakturState();
     }
   }
 
@@ -87,13 +80,21 @@ class PengirimanFakturBloc extends Bloc<PengirimanFakturEvent, PengirimanFakturB
         yield SuccessUpdateFinishTimeState();
       }
     } on DioError catch(e) {
-      if(e.response?.statusCode == 500) {
-        yield NotLoggedInState();
+      yield FailedPengirimanFakturState();
+    }
+  }
+
+  Stream<PengirimanFakturBlocState> _mapToGetRekapEvent(GetRekapEvent e) async* {
+    yield LoadingPengirimanFakturState();
+    final token =  _sharedPreferences.getString("access_token");
+    try{
+      final response = await _pengirimanFakturRepository.getRekap("Bearer $token", e.idLoper, e.filter);
+      if (response.message == "ok") {
+        yield GetRekapState(response.result);
       }
-      else {
-        print(e.message);
-        yield FailedPengirimanFakturState();
-      }
+    } on DioError catch(e) {
+      print(e.message);
+      yield FailedPengirimanFakturState();
     }
   }
 }

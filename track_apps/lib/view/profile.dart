@@ -180,7 +180,7 @@ class _Profile extends State<Profile> {
               )
           );
         }
-        if(state is FailedLoperState) {
+        if(state is FailedLoperState || state is NotLoggedInState) {
           return Login();
         } else {
           return Container();

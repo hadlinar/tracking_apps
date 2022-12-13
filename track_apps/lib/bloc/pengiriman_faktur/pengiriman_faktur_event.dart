@@ -33,3 +33,10 @@ class UpdateFinishTimeEvent extends PengirimanFakturEvent{
       this.deskripsi
   );
 }
+
+class GetRekapEvent extends PengirimanFakturEvent{
+  String idLoper;
+  String filter;
+
+  GetRekapEvent(this.idLoper, this.filter);
+}

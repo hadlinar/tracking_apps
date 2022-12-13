@@ -90,7 +90,8 @@ class _DetailFaktur extends State<DetailFaktur> {
                   )
               ),
             );
-          } if(state is SuccessUpdateFinishTimeState) {
+          }
+          if(state is SuccessUpdateFinishTimeState) {
             showDialog(
                 context: context,
                 builder: (BuildContext context) {

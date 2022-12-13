@@ -128,3 +128,36 @@ class UpdateFinishTimeResponse{
 
   factory UpdateFinishTimeResponse.fromJson(Map<String,dynamic> json) => _$UpdateFinishTimeResponseFromJson(json);
 }
+
+// {
+// "message": "ok",
+// "result": [
+// {
+// "pengiriman": "3",
+// "faktur": "11"
+// }
+// ]
+// }
+
+@JsonSerializable()
+class Rekap{
+  String pengiriman;
+  String faktur;
+
+  Rekap({
+    required this.pengiriman,
+    required this.faktur
+  });
+
+  factory Rekap.fromJson(Map<String,dynamic> json) => _$RekapFromJson(json);
+}
+
+@JsonSerializable()
+class RekapResponse{
+  String message;
+  Rekap result;
+
+  RekapResponse(this.message, this.result);
+
+  factory RekapResponse.fromJson(Map<String,dynamic> json) => _$RekapResponseFromJson(json);
+}

@@ -31,7 +31,7 @@ class _LoginPage extends State<Login> {
         print(state.toString());
         if(state is SuccessLoginState) {
           Navigator.push(context,  MaterialPageRoute(
-              builder: (context) => Dashboard()
+              builder: (context) => Home()
           ));
         }
         if(state is LoadingLoginState) {

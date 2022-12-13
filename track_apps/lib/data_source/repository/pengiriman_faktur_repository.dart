@@ -30,4 +30,9 @@ class PengirimanFakturRepository {
     );
     return response;
   }
+
+  Future<RekapResponse> getRekap(String token, String idLoper, String filter) async {
+    final response = await pengirimanFakturService.getRekap(token, idLoper, filter);
+    return response;
+  }
 }
