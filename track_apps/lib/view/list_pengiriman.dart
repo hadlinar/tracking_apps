@@ -31,6 +31,17 @@ class _ListPengiriman extends State<ListPengiriman> {
       bottom: false,
       child: BlocBuilder<TrackingLoperBloc, TrackingLoperBlocState> (
         builder: (context, state) {
+          print(state.toString());
+          if(state is LoadingTrackingLoperState || state is InitialTrackingLoperBlocState) {
+            return Container(
+              color: Colors.white,
+              child: const Center(
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF1BA3AC)),
+                  )
+              ),
+            );
+          }
           if(state is GetTrackingLoperState){
             return Scaffold(
                 backgroundColor: const Color(0xffF7F7F7),
@@ -47,30 +58,40 @@ class _ListPengiriman extends State<ListPengiriman> {
                     width: double.infinity,
                     child: Column(
                       children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ListFaktur(state.getTrackingLoper[0].id.toString()),
-                              ),
-                            );
-                          },
-                          child: ListView.builder(
+                        ListView.builder(
                             itemCount: state.getTrackingLoper.length,
                             scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                               itemBuilder: (context, i) {
-                                return Global.getCardPengiriman(
+                                return InkWell(
+                                  onTap: (){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ListFaktur(
+                                          state.getTrackingLoper[i].id.toString(), 1,
+                                          backListPengiriman: (int resMessage, BuildContext ctx) {
+                                            if (resMessage == 1) {
+                                              Navigator.of(ctx).pop();
+                                              BlocProvider.of<TrackingLoperBloc>(context).add(GetTrackingLoperEvent(store.get("id")));
+                                            }
+                                          },
+                                        ),
+                                      ),
+                                    );
+
+                                    store.set("id_pengiriman", state.getTrackingLoper[i].id_pengiriman);
+                                  },
+                                  child: Global.getCardPengiriman(
                                     state.getTrackingLoper[i].id_pengiriman,
                                     state.getTrackingLoper[i].start_loper == null ? 0xff6FA9F7 : (state.getTrackingLoper[i].finish_loper == null ? 0xffFCD713 : 0xff04D90D),
                                     state.getTrackingLoper[i].start_loper == null ? "Barang belum dikirim" : (state.getTrackingLoper[i].finish_loper == null ? "Sedang dalam pengiriman" : "Selesai"),
                                     DateFormat('dd MMM yyyy').format(state.getTrackingLoper[i].tanggal!.toLocal()).toString() + ", " + DateFormat.Hm().format(state.getTrackingLoper[i].tanggal!.toLocal()),
-                                    // "3"
+                                    state.getTrackingLoper[i].jumlah
+                                  )
                                 );
                               }
                           )
-                        )
                       ],
                     )
                 )

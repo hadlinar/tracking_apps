@@ -9,3 +9,9 @@ class GetTrackingLoperEvent extends TrackingLoperEvent{
 
   GetTrackingLoperEvent(this.id);
 }
+
+class GetHistoryLoperEvent extends TrackingLoperEvent{
+  String id;
+
+  GetHistoryLoperEvent(this.id);
+}

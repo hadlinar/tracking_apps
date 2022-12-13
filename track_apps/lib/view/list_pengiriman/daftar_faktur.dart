@@ -9,8 +9,11 @@ import '../../utils/global_state.dart';
 
 class ListFaktur extends StatefulWidget{
   String idPengiriman;
+  int resMessage;
+  BackListPengiriman? backListPengiriman;
+  BackListPengirimanHistory? backListPengirimanHistory;
 
-  ListFaktur(this.idPengiriman);
+  ListFaktur(this.idPengiriman, this.resMessage, {this.backListPengiriman, this.backListPengirimanHistory});
 
   @override
   State<StatefulWidget> createState() {
@@ -19,8 +22,11 @@ class ListFaktur extends StatefulWidget{
 }
 
 final GlobalState store = GlobalState.instance;
+typedef BackListPengiriman = void Function(int resultMessage, BuildContext context);
+typedef BackListPengirimanHistory = void Function(int resultMessage, BuildContext context);
 
 class _ListFaktur extends State<ListFaktur> {
+  String id_pengiriman = store.get("id_pengiriman");
 
   @override
   void initState() {
@@ -52,7 +58,13 @@ class _ListFaktur extends State<ListFaktur> {
                   backgroundColor: Colors.white,
                   centerTitle: false,
                   leading: IconButton(
-                      onPressed: Navigator.of(context).pop,
+                      onPressed: () {
+                        if(widget.resMessage == 1) {
+                          return widget.backListPengiriman!(1, context);
+                        } else {
+                          return widget.backListPengirimanHistory!(2, context);
+                        }
+                      },
                       icon: ImageIcon(
                         const AssetImage('assets/icons/back.png'),
                         color: Color(Global.TOSCA),
@@ -60,7 +72,7 @@ class _ListFaktur extends State<ListFaktur> {
                       )
                   ),
                   title: Text(
-                      "Daftar Pengiriman",
+                      "Daftar Faktur",
                       style: Global.getCustomFont(Global.TOSCA, 18, 'bold')
                   ),
                 ),
@@ -71,72 +83,38 @@ class _ListFaktur extends State<ListFaktur> {
                       width: double.infinity,
                       child: Column(
                         children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => DetailFaktur(),
-                                  ),
-                                );
-                              },
-                              child: ListView.builder(
-                                  itemCount: state.getPengirimanFaktur.length,
-                                  scrollDirection: Axis.vertical,
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  itemBuilder: (context, i) {
-                                    return Global.getCardFaktur(
-                                        state.getPengirimanFaktur[i].no_faktur,
-                                        state.getPengirimanFaktur[i].cust_id,
-                                        state.getPengirimanFaktur[i].cust_name,
-                                        state.getPengirimanFaktur[i].address
-                                    );
-                                  }
-                              )
-                          ),
-                          Container(
-                            padding: const EdgeInsets.only(top: 15),
-                            child: Align(
-                                alignment: Alignment.center,
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Container(
-                                        padding: const EdgeInsets.only(top: 9, bottom: 9),
-                                        width: 163,
-                                        height: 56,
-                                        color: const Color(0xffF7F7F7),
-                                        child: RaisedButton(
-                                            shape: RoundedRectangleBorder(
-                                                side: BorderSide(color: Color(Global.GREEN)),
-                                                borderRadius: BorderRadius.circular(20)
-                                            ),
-                                            color: Color(Global.GREEN),
-                                            onPressed: () {
-                                              showDialog(
-                                                  context: context,
-                                                  builder: (BuildContext context) {
-                                                    return Global.defaultModal(() {
-                                                      Navigator.pop(context);
-                                                    }, context, Global.WARNING_ICON, "swelesweleswele", "Ok", true);
-                                                  }
-                                              );
+                           ListView.builder(
+                              itemCount: state.getPengirimanFaktur.length,
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemBuilder: (context, i) {
+                                return InkWell(
+                                  onTap: (){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => DetailFaktur(
+                                            widget.idPengiriman,
+                                            state.getPengirimanFaktur[i].no_faktur,
+                                            backDaftarFaktur: (int resMessage, BuildContext ctx, String id) {
+                                              if (resMessage == 1) {
+                                                Navigator.of(ctx).pop();
+                                                BlocProvider.of<PengirimanFakturBloc>(ctx).add(GetPengirimanFakturEvent(id));
+                                              }
                                             },
-                                            child: const Text(
-                                              "Mulai Pengiriman",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontFamily: 'bold',
-                                                  fontSize: 15
-                                              ),
-                                            )
                                         ),
                                       ),
-                                    ]
-                                )
-                            ),
+                                    );
+                                  },
+                                  child: Global.getCardFaktur(
+                                      state.getPengirimanFaktur[i].no_faktur,
+                                      state.getPengirimanFaktur[i].cust_id,
+                                      state.getPengirimanFaktur[i].cust_name,
+                                      state.getPengirimanFaktur[i].address
+                                  ),
+                                );
+                              }
                           ),
                         ],
                       )

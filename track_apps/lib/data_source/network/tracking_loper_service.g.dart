@@ -35,17 +35,16 @@ class _TrackingLoperService implements TrackingLoperService {
   }
 
   @override
-  Future<TrackingLoperResponse> postTrackingLoper(authorization, body) async {
+  Future<TrackingLoperResponse> getHistoryLoper(authorization, filter) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': authorization};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
-    _data.addAll(body);
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<TrackingLoperResponse>(
-            Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/track-loper/{id}',
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/track-loper/history/${filter}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = TrackingLoperResponse.fromJson(_result.data!);

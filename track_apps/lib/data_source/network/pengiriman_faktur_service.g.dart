@@ -19,7 +19,7 @@ class _PengirimanFakturService implements PengirimanFakturService {
 
   @override
   Future<PengirimanFakturResponse> getPengirimanFaktur(
-      authorization, filter) async {
+      authorization, id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': authorization};
@@ -28,7 +28,7 @@ class _PengirimanFakturService implements PengirimanFakturService {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<PengirimanFakturResponse>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/pengiriman-faktur/${filter}',
+                .compose(_dio.options, '/pengiriman-faktur/${id}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = PengirimanFakturResponse.fromJson(_result.data!);
@@ -36,21 +36,39 @@ class _PengirimanFakturService implements PengirimanFakturService {
   }
 
   @override
-  Future<PengirimanFakturResponse> postPengirimanFaktur(
-      authorization, body) async {
+  Future<DetailFakturResponse> getDetailFaktur(
+      authorization, id, idLoper, noFaktur) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'noFaktur': noFaktur};
+    final _headers = <String, dynamic>{r'Authorization': authorization};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<DetailFakturResponse>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/pengiriman-faktur/${id}/${idLoper}',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = DetailFakturResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UpdateFinishTimeResponse> postFinishTime(
+      authorization, id, noFaktur, body) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'noFaktur': noFaktur};
     final _headers = <String, dynamic>{r'Authorization': authorization};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     _data.addAll(body);
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<PengirimanFakturResponse>(
+        _setStreamType<UpdateFinishTimeResponse>(
             Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/pengiriman-faktur/{id}',
+                .compose(_dio.options, '/pengiriman-faktur/${id}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = PengirimanFakturResponse.fromJson(_result.data!);
+    final value = UpdateFinishTimeResponse.fromJson(_result.data!);
     return value;
   }
 

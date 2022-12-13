@@ -12,4 +12,22 @@ class PengirimanFakturRepository {
     return response;
   }
 
+  Future<DetailFakturResponse> getDetailFaktur(String token, String id, String idLoper, String noFaktur) async {
+    final response = await pengirimanFakturService.getDetailFaktur(token, id, idLoper, noFaktur);
+    return response;
+  }
+
+  Future<UpdateFinishTimeResponse> postFinishTime(String token, String id, String noFaktur, String finishFaktur, int checkFaktur, String deskripsi) async {
+    final response = await pengirimanFakturService.postFinishTime(
+        token,
+        id,
+        noFaktur,
+        {
+          "finish_faktur": finishFaktur,
+          "check_faktur": checkFaktur,
+          "deskripsi": deskripsi
+        }
+    );
+    return response;
+  }
 }

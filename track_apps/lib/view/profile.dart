@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:track_apps/bloc/loper/loper_bloc.dart';
+import 'package:track_apps/view/history.dart';
 import '../utils/global.dart';
 import '../utils/global_state.dart';
 import 'login.dart';
@@ -42,7 +43,6 @@ class _Profile extends State<Profile> {
               body: Stack(
                 children: [
                   Container(
-
                       margin: const EdgeInsets.only(top: 102),
                       padding: const EdgeInsets.only(top: 183, left: 39),
                       height: 230,
@@ -98,24 +98,31 @@ class _Profile extends State<Profile> {
                               bottomRight: Radius.circular(20)
                           )
                       ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          child: Image.asset(
-                            'assets/icons/riwayat.png'
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (context) => Riwayat()
+                          ));
+                        },
+                        child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            child: Image.asset(
+                              'assets/icons/riwayat.png'
+                            )
+                          ),
+                          Container(
+                            width: 11,
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(top: 3, left: 12),
+                            child: Text('Riwayat', style: Global.getCustomFont(Global.WHITE, 18, 'bold'))
                           )
-                        ),
-                        Container(
-                          width: 11,
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(top: 3, left: 12),
-                          child: Text('Riwayat', style: Global.getCustomFont(Global.WHITE, 18, 'bold'))
-                        )
-                      ],
-                    )
+                        ],
+                    ),
+                      )
                   ),
                   Container(
                       height: 200,

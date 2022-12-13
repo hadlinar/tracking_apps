@@ -20,3 +20,9 @@ class GetTrackingLoperState extends TrackingLoperBlocState{
 
   GetTrackingLoperState(this.getTrackingLoper);
 }
+
+class GetHistoryLoperState extends TrackingLoperBlocState{
+  List<TrackingLoper> getHistoryLoper;
+
+  GetHistoryLoperState(this.getHistoryLoper);
+}

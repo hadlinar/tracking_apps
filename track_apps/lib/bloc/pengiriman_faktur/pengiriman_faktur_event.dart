@@ -9,3 +9,27 @@ class GetPengirimanFakturEvent extends PengirimanFakturEvent{
 
   GetPengirimanFakturEvent(this.id);
 }
+
+class GetDetailFakturEvent extends PengirimanFakturEvent{
+  String id;
+  String idLoper;
+  String noFaktur;
+
+  GetDetailFakturEvent(this.id, this.idLoper, this.noFaktur);
+}
+
+class UpdateFinishTimeEvent extends PengirimanFakturEvent{
+  String id;
+  String noFaktur;
+  String finishFaktur;
+  int checkFaktur;
+  String deskripsi;
+
+  UpdateFinishTimeEvent(
+      this.id,
+      this.noFaktur,
+      this.finishFaktur,
+      this.checkFaktur,
+      this.deskripsi
+  );
+}

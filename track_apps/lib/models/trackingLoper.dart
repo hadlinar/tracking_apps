@@ -4,17 +4,15 @@ import 'package:track_apps/models/trackingLoper.dart';
 part 'trackingLoper.g.dart';
 
 // {
-// "message": "ok",
-// "result": {
 // "id": 37,
 // "id_pengiriman": "TRK-2022-KP-0018",
 // "id_loper": 2,
 // "branch_id": "11",
 // "start_loper": "2022-12-05T19:09:26.000Z",
-// "finish_loper": null,
-// "tanggal": "2022-12-05T19:09:26.000Z"
-// }
-// }
+// "finish_loper": "2022-12-13T06:20:11.411Z",
+// "tanggal": "2022-12-05T19:09:26.000Z",
+// "jumlah": "3"
+// },
 
 @JsonSerializable(nullable: true)
 class TrackingLoper{
@@ -25,6 +23,7 @@ class TrackingLoper{
   DateTime? start_loper;
   DateTime? finish_loper;
   DateTime? tanggal;
+  String jumlah;
 
   TrackingLoper({
     required this.id,
@@ -33,7 +32,8 @@ class TrackingLoper{
     required this.branch_id,
     required this.start_loper,
     required this.finish_loper,
-    required this.tanggal
+    required this.tanggal,
+    required this.jumlah
   });
 
   factory TrackingLoper.fromJson(Map<String,dynamic> json) => _$TrackingLoperFromJson(json);

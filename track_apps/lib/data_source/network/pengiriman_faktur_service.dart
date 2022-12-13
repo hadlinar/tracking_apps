@@ -13,8 +13,21 @@ abstract class PengirimanFakturService{
   static create(Dio dio) => _PengirimanFakturService(dio);
 
   @GET('/pengiriman-faktur/{id}')
-  Future<PengirimanFakturResponse> getPengirimanFaktur(@Header("Authorization") String authorization, @Path('id') String filter);
+  Future<PengirimanFakturResponse> getPengirimanFaktur(@Header("Authorization") String authorization, @Path('id') String id);
+
+  @GET('/pengiriman-faktur/{id}/{idLoper}')
+  Future<DetailFakturResponse> getDetailFaktur(
+      @Header("Authorization") String authorization,
+      @Path('id') String id,
+      @Path('idLoper') String idLoper,
+      @Query('noFaktur') String noFaktur
+  );
 
   @POST('/pengiriman-faktur/{id}')
-  Future<PengirimanFakturResponse> postPengirimanFaktur(@Header("Authorization") String authorization, @Body() Map<String,dynamic> body);
+  Future<UpdateFinishTimeResponse> postFinishTime(
+      @Header("Authorization") String authorization,
+      @Path('id') String id,
+      @Query('noFaktur') String noFaktur,
+      @Body() Map<String,dynamic> body
+    );
 }

@@ -11,4 +11,9 @@ class TrackingLoperRepository {
     final response = await trackingLoperService.getTrackingLoper(token, id);
     return response;
   }
+
+  Future<TrackingLoperResponse> getHistoryLoper(String token, String id) async {
+    final response = await trackingLoperService.getHistoryLoper(token, id);
+    return response;
+  }
 }

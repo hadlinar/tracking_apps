@@ -27,6 +27,9 @@ class TrackingLoperBloc extends Bloc<TrackingLoperEvent, TrackingLoperBlocState>
     if(event is GetTrackingLoperEvent) {
       yield* _mapToGetTrackingLoperEvent(event);
     }
+    if(event is GetHistoryLoperEvent) {
+      yield* _mapToGetHistoryLoperEvent(event);
+    }
   }
 
   Stream<TrackingLoperBlocState> _mapToGetTrackingLoperEvent(GetTrackingLoperEvent e) async* {
@@ -35,6 +38,23 @@ class TrackingLoperBloc extends Bloc<TrackingLoperEvent, TrackingLoperBlocState>
       final response = await _trackingLoperRepository.getTrackingLoper("Bearer $token", e.id);
       if (response.message == "ok") {
         yield GetTrackingLoperState(response.result);
+      }
+    } on DioError catch(e) {
+      if(e.response?.statusCode == 500) {
+        yield NotLoggedInState();
+      }
+      else {
+        yield FailedTrackingLoperState();
+      }
+    }
+  }
+
+  Stream<TrackingLoperBlocState> _mapToGetHistoryLoperEvent(GetHistoryLoperEvent e) async* {
+    final token = _sharedPreferences.getString("access_token");
+    try{
+      final response = await _trackingLoperRepository.getHistoryLoper("Bearer $token", e.id);
+      if (response.message == "ok") {
+        yield GetHistoryLoperState(response.result);
       }
     } on DioError catch(e) {
       if(e.response?.statusCode == 500) {

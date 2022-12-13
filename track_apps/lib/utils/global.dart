@@ -21,6 +21,7 @@ class Global {
   static String ACCESS_TOKEN = "access_token";
 
   static const WARNING_ICON = "assets/icons/ic_warning.png";
+  static const CHECK_ICON = "assets/icons/ic_check.png";
 
 
   static void setState(Null Function() param0) {}
@@ -69,7 +70,7 @@ class Global {
     );
   }
 
-  static Card getCardPengiriman(String noPengiriman, int color, String status, String date) {
+  static Card getCardPengiriman(String noPengiriman, int color, String status, String date, String jumlah) {
     return Card(
         elevation: 5,
         shadowColor: const Color(0xffBCBCBC),
@@ -79,7 +80,7 @@ class Global {
         ),
         child: SizedBox(
             width: 370,
-            height: 100,
+            height: 130,
             child: Container(
               padding: const EdgeInsets.only(left: 12, top: 14),
               child: Column(
@@ -123,13 +124,13 @@ class Global {
                       child: Text(date, style: Global.getCustomFont(Global.BLACK, 14, 'medium')),
                     ),
                   ),
-                  // Container(
-                  //   padding: const EdgeInsets.only(top: 10),
-                  //   child: Align(
-                  //     alignment: Alignment.topLeft,
-                  //     child: Text(jmlhFaktur + " faktur", style: Global.getCustomFont(Global.BLACK, 14, 'medium')),
-                  //   ),
-                  // )
+                  Container(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(jumlah + " faktur", style: Global.getCustomFont(Global.BLACK, 14, 'medium')),
+                    ),
+                  )
                 ],
               )
             )

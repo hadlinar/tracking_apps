@@ -20,3 +20,11 @@ class getPengirimanFakturState extends PengirimanFakturBlocState{
 
   getPengirimanFakturState(this.getPengirimanFaktur);
 }
+
+class GetDetailFakturState extends PengirimanFakturBlocState{
+  List<DetailFaktur> getDetailFaktur;
+
+  GetDetailFakturState(this.getDetailFaktur);
+}
+
+class SuccessUpdateFinishTimeState extends PengirimanFakturBlocState{}
