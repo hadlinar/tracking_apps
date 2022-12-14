@@ -41,10 +41,10 @@ class _LoginPage extends State<Login> {
                 return AlertDialog(
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10))),
-                  title: Container(
+                  title: const SizedBox(
                     height: 50,
                     width: 50,
-                    child: const Center(
+                    child: Center(
                       child: CircularProgressIndicator(
                         valueColor:AlwaysStoppedAnimation<Color>(Color(0xFF1BA3AC)),
                       ),
@@ -117,8 +117,14 @@ class _LoginPage extends State<Login> {
                     )
                   ),
                   Container(
+                    height: 120,
+                    child: Image.asset(
+                      'assets/images/Logo.png',
+                    ),
+                  ),
+                  Container(
                       padding: const EdgeInsets.only(left: 21, right: 21),
-                      margin: const EdgeInsets.only(top: 50),
+                      margin: const EdgeInsets.only(top: 20),
                       child: Column(
                         children: <Widget>[
                           Container(
@@ -169,7 +175,7 @@ class _LoginPage extends State<Login> {
                           Stack(
                               children: <Widget>[
                                 Container(
-                                  padding: EdgeInsets.only(left: 18, right: 18, top: 9, bottom: 9),
+                                  padding: const EdgeInsets.only(left: 18, right: 18, top: 9, bottom: 9),
                                   width: 150,
                                   height: 56,
                                   color: Colors.white,
@@ -180,12 +186,23 @@ class _LoginPage extends State<Login> {
                                       ),
                                       color: Color(Global.TOSCA),
                                       onPressed: () {
-                                        BlocProvider.of<LoginBloc>(context).add(
-                                            LoginEvent(
-                                                username,
-                                                pass
-                                            )
-                                        );
+                                        if(username.isEmpty || pass.isEmpty) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (BuildContext context) {
+                                                return Global.defaultModal(() {
+                                                  Navigator.pop(context);
+                                                }, context, Global.WARNING_ICON, "Mohon lengkapi username dan kata sandi", "Coba lagi", false);
+                                              }
+                                          );
+                                        } else {
+                                          BlocProvider.of<LoginBloc>(context).add(
+                                              LoginEvent(
+                                                  username,
+                                                  pass
+                                              )
+                                          );
+                                        }
 
                                       },
                                       child: const Text(
