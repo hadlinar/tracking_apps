@@ -10,7 +10,7 @@ part of 'tracking_loper_service.dart';
 
 class _TrackingLoperService implements TrackingLoperService {
   _TrackingLoperService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://10.0.2.2:5000';
+    baseUrl ??= 'http://10.0.2.2:3001/toba';
   }
 
   final Dio _dio;

@@ -31,6 +31,15 @@ class _Profile extends State<Profile> {
     return BlocBuilder<LoperBloc, LoperBlocState>(
       builder: (context, state) {
         print(state.toString());
+        if(state is LoadingLoperState || state is InitialLoperBlocState) {
+          return Container(
+            child: const Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF1BA3AC)),
+                )
+            ),
+          );
+        }
         if(state is GetLoperState) {
           return Scaffold(
               backgroundColor: const Color(0xffF7F7F7),

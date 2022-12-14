@@ -76,6 +76,7 @@ flutter:
     - assets/images/login.svg
     - assets/images/home.svg
     - assets/images/Logo.png
+    - assets/images/empty.png
 
     #icons
     - assets/icons/faktur.png

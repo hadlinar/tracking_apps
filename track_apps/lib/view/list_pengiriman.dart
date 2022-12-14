@@ -48,6 +48,7 @@ class _ListPengiriman extends State<ListPengiriman> {
                 appBar: AppBar(
                   backgroundColor: Colors.white,
                   centerTitle: false,
+                  automaticallyImplyLeading: false,
                   title: Text(
                       "Daftar Pengiriman",
                       style: Global.getCustomFont(Global.TOSCA, 18, 'bold')
@@ -58,7 +59,7 @@ class _ListPengiriman extends State<ListPengiriman> {
                     width: double.infinity,
                     child: Column(
                       children: [
-                        ListView.builder(
+                        state.getTrackingLoper.length != 0 ? ListView.builder(
                             itemCount: state.getTrackingLoper.length,
                             scrollDirection: Axis.vertical,
                             shrinkWrap: true,
@@ -91,7 +92,25 @@ class _ListPengiriman extends State<ListPengiriman> {
                                   )
                                 );
                               }
-                          )
+                          ) :
+                        Column(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 200),
+                              height: 120,
+                              child: Image.asset(
+                                'assets/images/empty.png',
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Text(
+                                  "Belum ada pengiriman",
+                                  style: Global.getCustomFont(0xffAAAAAA, 18, 'bold')
+                              ),
+                            )
+                          ],
+                        )
                       ],
                     )
                 )

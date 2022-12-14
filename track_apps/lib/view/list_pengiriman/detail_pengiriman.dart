@@ -139,7 +139,7 @@ class _DetailFaktur extends State<DetailFaktur> {
                 )
             ),
             title: Text(
-                "Daftar Faktur",
+                "Detail Faktur",
                 style: Global.getCustomFont(Global.TOSCA, 18, 'bold')
             ),
           ),

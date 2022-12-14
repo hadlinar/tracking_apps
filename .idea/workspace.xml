@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="" />
+    <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/network/branch_service.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/branch_service.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/network/login_service.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/login_service.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/network/logout_service.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/logout_service.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/network/loper_service.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/loper_service.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/network/pengiriman_faktur_service.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/pengiriman_faktur_service.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/network/tracking_loper_service.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/tracking_loper_service.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/network/user_service.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/user_service.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/models/pengirimanFaktur.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/models/pengirimanFaktur.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/models/trackingLoper.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/models/trackingLoper.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/utils/global.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/utils/global.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman/detail_pengiriman.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman/detail_pengiriman.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track_apps/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
