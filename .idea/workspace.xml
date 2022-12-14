@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/bloc/pengiriman_faktur/pengiriman_faktur_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/bloc/pengiriman_faktur/pengiriman_faktur_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/bloc/pengiriman_faktur/pengiriman_faktur_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/bloc/pengiriman_faktur/pengiriman_faktur_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/bloc/pengiriman_faktur/pengiriman_faktur_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/bloc/pengiriman_faktur/pengiriman_faktur_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/network/pengiriman_faktur_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/pengiriman_faktur_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/network/pengiriman_faktur_service.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/network/pengiriman_faktur_service.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/data_source/repository/pengiriman_faktur_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/data_source/repository/pengiriman_faktur_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/models/pengirimanFaktur.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/models/pengirimanFaktur.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/models/pengirimanFaktur.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/models/pengirimanFaktur.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/dashboard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman/detail_pengiriman.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman/detail_pengiriman.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/profile.dart" afterDir="false" />
-    </list>
+    <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
