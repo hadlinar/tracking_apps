@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/utils/global.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/utils/global.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman/list_faktur.dart" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/lib/view/list_pengiriman/daftar_faktur.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/track_apps/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/track_apps/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="f46a8705-3f36-48e4-b6af-c6e590002551" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +14,18 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,6 +54,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
@@ -55,11 +62,20 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/track_apps/lib/bloc/logout" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\lib\bloc\logout" />
+      <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\lib\bloc\loper" />
+      <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\lib\bloc\launcher" />
+      <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\lib\bloc\user" />
+      <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\lib\bloc\tracking_loper" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\lib\bloc\loper" />
       <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\assets\images" />
       <recent name="C:\Users\TI-IMA-LT\Desktop\Tracking Apps\track_apps\lib" />
     </key>
@@ -74,10 +90,35 @@
       <option name="filePath" value="$PROJECT_DIR$/track_apps/lib/main_dev.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="C:/Users/TI-IMA-LT/Desktop/Tracking Apps/track_apps" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/track_apps" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Flutter.main_dev.dart" />
       <item itemvalue="Flutter.main.dart" />
+      <item itemvalue="Gradle.C:/Users/TI-IMA-LT/Desktop/Tracking Apps/track_apps" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.C:/Users/TI-IMA-LT/Desktop/Tracking Apps/track_apps" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

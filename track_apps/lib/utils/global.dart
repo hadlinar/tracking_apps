@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Global {
-  static const String baseURL = "http://localhost:5000";
+  static const String baseURL = "http://10.0.2.2:5000";
 
   static int TOSCA = 0xff1BA3AC;
   static int LIGHT_TOSCA = 0xff1CBAC5;
@@ -13,6 +13,7 @@ class Global {
   static int YELLOW = 0xffFCD713;
   static int GREY = 0xff656565;
   static int LIGHT_GREY = 0xff878787;
+  static int DARK_GREY = 0xff727272;
   static int RED = 0xffFF0000;
   static int BLACK = 0xff000000;
   static int WHITE = 0xffFFFFFF;
@@ -20,6 +21,7 @@ class Global {
   static String ACCESS_TOKEN = "access_token";
 
   static const WARNING_ICON = "assets/icons/ic_warning.png";
+  static const CHECK_ICON = "assets/icons/ic_check.png";
 
 
   static void setState(Null Function() param0) {}
@@ -68,7 +70,7 @@ class Global {
     );
   }
 
-  static Card getCardPengiriman(String noPengiriman, int color, String status, String date, String jmlhFaktur) {
+  static Card getCardPengiriman(String noPengiriman, int color, String status, String date, String jumlah) {
     return Card(
         elevation: 5,
         shadowColor: const Color(0xffBCBCBC),
@@ -126,7 +128,7 @@ class Global {
                     padding: const EdgeInsets.only(top: 10),
                     child: Align(
                       alignment: Alignment.topLeft,
-                      child: Text(jmlhFaktur + " faktur", style: Global.getCustomFont(Global.BLACK, 14, 'medium')),
+                      child: Text(jumlah + " faktur", style: Global.getCustomFont(Global.BLACK, 14, 'medium')),
                     ),
                   )
                 ],
@@ -146,9 +148,9 @@ class Global {
         ),
         child: SizedBox(
             width: 370,
-            height: 160,
+            // height: 160,
             child: Container(
-                padding: const EdgeInsets.only(left: 12, top: 14),
+                padding: const EdgeInsets.only(left: 12, top: 14, bottom: 14, right: 12),
                 child: Column(
                   children: [
                     Row(
