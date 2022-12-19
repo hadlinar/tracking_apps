@@ -10,7 +10,7 @@ part of 'logout_service.dart';
 
 class _LogoutService implements LogoutService {
   _LogoutService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://10.0.2.2:3001/toba';
+    baseUrl ??= 'http://103.140.207.25:3000/toba';
   }
 
   final Dio _dio;

@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Global {
-  static const String baseURL = "http://10.0.2.2:3001/toba";
+  static const String baseURL = "http://103.140.207.25:3000/toba";
 
   static int TOSCA = 0xff1BA3AC;
   static int LIGHT_TOSCA = 0xff1CBAC5;
@@ -53,16 +53,16 @@ class Global {
             borderRadius: BorderRadius.circular(15)
         ),
         child: SizedBox(
-            width: 151,
-            height: 151,
+            width: 131,
+            height: 131,
             child: Container(
-              padding: const EdgeInsets.only(top: 22, left: 12),
+              padding: const EdgeInsets.only(top: 12, left: 12),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Image.asset(
                   'assets/icons/$imageCard',
-                  height: 68,
-                  width: 68
+                  height: 58,
+                  width: 58
                 ),
               ),
             )
@@ -205,7 +205,7 @@ class Global {
   static Text getMenuText(String textToShown) {
     return Text(
       textToShown,
-      style: Global.getCustomFont(Global.LIGHT_GREY, 16, 'regular'),
+      style: Global.getCustomFont(Global.LIGHT_GREY, 14, 'regular'),
     );
   }
 

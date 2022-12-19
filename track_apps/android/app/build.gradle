@@ -44,10 +44,31 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.track_apps"
+        minSdkVersion 18
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
+    }
+
+    flavorDimensions "toba"
+    productFlavors {
+
+        development {
+            dimension "toba"
+            versionCode 1
+            versionName "1.0"
+        }
+        production {
+            dimension "toba"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
     }
 
     buildTypes {

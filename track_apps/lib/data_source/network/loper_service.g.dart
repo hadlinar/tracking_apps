@@ -10,7 +10,7 @@ part of 'loper_service.dart';
 
 class _LoperService implements LoperService {
   _LoperService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://10.0.2.2:3001/toba';
+    baseUrl ??= 'http://103.140.207.25:3000/toba';
   }
 
   final Dio _dio;

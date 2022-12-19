@@ -96,37 +96,43 @@ class _Dashboard extends State<Dashboard> {
                                 }
                                 if(state is GetRekapState) {
                                   return Container(
-                                      padding: const EdgeInsets.only(left: 31, top: 77, right: 31),
+                                    margin: const EdgeInsets.only(right: 31, left: 31),
+                                      padding: const EdgeInsets.only(top: 77),
                                       child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Stack(
-                                            children: <Widget>[
-                                              Global.getMenuCard("faktur.png", 0xffFFFFFF),
-                                              Container(
-                                                  padding: const EdgeInsets.only(left: 22, top: 89),
-                                                  child: Text(state.getRekap.faktur, style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
-                                              ),
-                                              Container(
-                                                  padding: const EdgeInsets.only(left: 22, top: 120),
-                                                  child: Global.getMenuText("faktur")
-                                              )
-                                            ],
+                                          Expanded(
+                                            child: Stack(
+                                              children: <Widget>[
+                                                Global.getMenuCard("faktur.png", 0xffFFFFFF),
+                                                Container(
+                                                    padding: const EdgeInsets.only(left: 22, top: 79),
+                                                    child: Text(state.getRekap.faktur, style: Global.getCustomFont(Global.BLACK, 20, 'medium'))
+                                                ),
+                                                Container(
+                                                    padding: const EdgeInsets.only(left: 22, top: 110),
+                                                    child: Global.getMenuText("faktur")
+                                                )
+                                              ],
+                                            ),
                                           ),
                                           Container(
                                               width: 26
                                           ),
-                                          Stack(
-                                            children: <Widget>[
-                                              Global.getMenuCard("pengiriman.png", 0xffFFFFFF),
-                                              Container(
-                                                  padding: const EdgeInsets.only(left: 22, top: 89),
-                                                  child: Text(state.getRekap.pengiriman, style: Global.getCustomFont(Global.BLACK, 22, 'medium'))
-                                              ),
-                                              Container(
-                                                  padding: const EdgeInsets.only(left: 22, top: 120),
-                                                  child: Global.getMenuText("pengiriman")
-                                              )
-                                            ],
+                                          Expanded(
+                                            child: Stack(
+                                              children: <Widget>[
+                                                Global.getMenuCard("pengiriman.png", 0xffFFFFFF),
+                                                Container(
+                                                    padding: const EdgeInsets.only(left: 22, top: 79),
+                                                    child: Text(state.getRekap.pengiriman, style: Global.getCustomFont(Global.BLACK, 20, 'medium'))
+                                                ),
+                                                Container(
+                                                    padding: const EdgeInsets.only(left: 22, top: 110),
+                                                    child: Global.getMenuText("pengiriman")
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       )
